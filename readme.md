@@ -1,4 +1,4 @@
 Some text
 Some new text
 And again
-New line
+New line1

@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>My HTML Page</title>
+        <script>
+            let pictures = ['https://miro.medium.com/v2/resize:fit:799/1*VYisIu_trZPEZbLWkUtmBg.jpeg',
+        'https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fb0b5b998-c15a-4725-8cfc-4d9c0b13cc51_1024x1024.png']
+            function load() {
+                //document.getElementById('img_canvas').getElementsByTagName('img')[0].src = pictures[0]
+                changePic(0);
+            }
+
+            function changePic(n) {
+                document.getElementById('img_canvas').getElementsByTagName('img')[0].src = pictures[n % pictures.length]
+                setTimeout(()=>changePic(n+1), 2000)
+            }
+
+        </script>
+    </head>
+    <body onload="load()">
+        <h1>My slideshow</h1>
+        <div id="img_canvas" style="width: 500px; height: 500px;">
+            <img style="width: 100%; height: 100%;">
+        </div>
+    </body>
+</html>
